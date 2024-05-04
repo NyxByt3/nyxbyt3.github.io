@@ -5,13 +5,12 @@
     <div class="col-md-10 col-md-offset-1">
       <h2>{{ page.title }}</h2>
       <ul>
-        {% for post in site.posts | reverse %}
+        {% for post in site.posts %}
         <li>
           <h3>
-            {{ post.date | date_to_string }} . 
-            {{ post.category }} . 
-            <a href="{{site.repository_name}}{{ post.url }}">{{ post.title }}</a> 
-            {{ post.comments | default: "0" }} Comments
+            <span class="post-date">{{ post.date | date_to_string }}</span> . 
+            <span class="post-category">{{ post.category }}</span> . 
+            <a href="{{ site.repository_name }}{{ post.url }}">{{ post.title }}</a>
           </h3>
         </li>
         {% endfor %}
@@ -21,4 +20,5 @@
 </section>
 
 <!-- Archive End -->
+
 
