@@ -15,7 +15,7 @@ tags: ["tutorial"]
 sudo nmap -Pn -sT -sU -sC -sV 10.10.11.242
 ```
 
-![[Pasted image 20240503124950.png | nmap scan]]
+![[img/HTB-Devvortex/Pasted image 20240503124950.png]]
 
 ##### Whatweb
 
