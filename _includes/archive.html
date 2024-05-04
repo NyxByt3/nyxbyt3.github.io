@@ -5,21 +5,14 @@
     <div class="col-md-10 col-md-offset-1">
       <h2>{{ page.title }}</h2>
       <ul>
-        {% for post in site.posts %}
+        {% for post in site.posts | reverse %}
         <li>
           <h3>
-            <strong>{{ post.date | date_to_string }}</strong>
-            <small>
-              .
-              <a class="category" href="{{site.repository_name}}/categories/{{ post.category | downcase }}.html">
-                {{ post.category }}
-              </a>
-              .
-            </small>
-            <strong><a href="{{site.repository_name}}{{ post.url }}">{{ post.title }}</a></strong>
-            <small><a href="{{site.repository_name}}{{ post.url }}#disqus_thread">Comments</a></small>
+            {{ post.date | date_to_string }} . 
+            {{ post.category }} . 
+            <a href="{{site.repository_name}}{{ post.url }}">{{ post.title }}</a> 
+            {{ post.comments | default: "0" }} Comments
           </h3>
-          <p>{{ post.excerpt }}</p>
         </li>
         {% endfor %}
       </ul>
