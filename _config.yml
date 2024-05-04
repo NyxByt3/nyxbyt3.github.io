@@ -9,9 +9,9 @@ url: "https://c0d3cr4f73r.github.io"
 # then add in the repository_name here, like this: "/repository-name"
 #
 # NB! Without this *nothing* will work, because it's used in every path :)
-repository_name: /personal-jekyll-theme
+# repository_name: /personal-jekyll-theme
 # Google tracking id
-google-tracking-id: "UA-XXXXXXXX-X"
+# google-tracking-id: "UA-XXXXXXXX-X"
 #############
 # HTML Head #
 #############
