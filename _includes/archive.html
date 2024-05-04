@@ -1,24 +1,14 @@
-<!-- Archive Start -->
+<!-- post-list.html -->
 
-<section id="{{ page.section-type }}" class="container content-section text-center">
-  <div class="row">
-    <div class="col-md-10 col-md-offset-1">
-      <h2>{{ page.title }}</h2>
-      <ul>
-        {% for post in site.posts | reverse %}
-        <li>
-          <h3>
-            {{ post.date | date_to_string }} . 
-            {{ post.category }} . 
-            <a href="{{site.repository_name}}{{ post.url }}">{{ post.title }}</a> 
-            {{ post.comments | default: "0" }} Comments
-          </h3>
-        </li>
-        {% endfor %}
-      </ul>
-    </div>
-  </div>
-</section>
+{% assign post = include.post %}
 
-<!-- Archive End -->
+<div class="post-list-item">
+  <h4>
+    <strong>{{ post.date | date_to_string }}</strong> . 
+    <span class="category">{{ post.category }}</span> . 
+    <a href="{{ site.repository_name }}{{ post.url }}">{{ post.title }}</a>
+    <small><a href="{{ site.repository_name }}{{ post.url }}#disqus_thread">Comments</a></small>
+  </h4>
+  <p>{{ post.content | strip_html | truncatewords: 50 }}</p>
+</div>
 
