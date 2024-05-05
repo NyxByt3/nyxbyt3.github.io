@@ -9,7 +9,7 @@ tags: ["tutorial"]
 
 ### Reconnaissance and Initial Steps
 
-##### Nmap Results
+#### Nmap Results
 
 ```
 sudo nmap -Pn -sT -sU -sC -sV 10.10.11.242
@@ -27,7 +27,7 @@ echo "10.10.11.8 headless.htb" | sudo tee -a /etc/hosts
 ![image](https://github.com/c0d3cr4f73r/c0d3cr4f73r.github.io/assets/66146701/3bd6636f-3891-49d6-988c-f4de867e7ce6)
 
 
-##### Directory Enumeration
+#### Directory Enumeration
 
 ```
 dirsearch -u http://headless.htb:5000
@@ -35,12 +35,12 @@ dirsearch -u http://headless.htb:5000
 
 ![image](https://github.com/c0d3cr4f73r/c0d3cr4f73r.github.io/assets/66146701/5a86b5e0-bb85-4ef3-a558-d560c4c57c70)
 
-We can see that there are two pages available; /support and /dashboard. Let’s visit both of them to find our way into the machine.
+We can see that there are two pages available; `/support` and `/dashboard`. Let’s visit both of them to find our way into the machine.
 
 ![image](https://github.com/c0d3cr4f73r/c0d3cr4f73r.github.io/assets/66146701/a17cd01d-309a-4ee0-baa7-3855e53f86f5)
 
 
-To access the /dashboard, we either need to be logged in as a user with elevated privileges (admin) (but I don’t see a login page), or we need to trick the server into believing that we are authorized to access the URL. When considering how to trick the server, I think about providing it with either an admin cookie or an admin session ID.
+To access the `/dashboard`, we either need to be logged in as a user with elevated privileges (admin) (but I don’t see a login page), or we need to trick the server into believing that we are authorized to access the URL. When considering how to trick the server, I think about providing it with either an admin cookie or an admin session ID.
 
 
 ### Getting Foothold on Headless
@@ -61,13 +61,12 @@ At this stage, we need to test the XSS payload across all parameters present in 
 
 ![image](https://github.com/c0d3cr4f73r/c0d3cr4f73r.github.io/assets/66146701/dbd01369-141b-45f5-b0d8-884309419e76)
 
-![image](https://github.com/c0d3cr4f73r/c0d3cr4f73r.github.io/assets/66146701/43e14dec-7e38-4660-9a73-7d54d846e2ca)
+![image](https://github.com/c0d3cr4f73r/c0d3cr4f73r.github.io/assets/66146701/b6a376a8-a032-4c50-a487-3237efc72d18)
 
-![image](https://github.com/c0d3cr4f73r/c0d3cr4f73r.github.io/assets/66146701/cf518852-8d03-4af4-8e68-00115aa9f45b)
+![image](https://github.com/c0d3cr4f73r/c0d3cr4f73r.github.io/assets/66146701/bd5427da-f098-4705-9575-0ef0fcfb5636)
 
-![image](https://github.com/c0d3cr4f73r/c0d3cr4f73r.github.io/assets/66146701/d3dc3504-3fc2-4b05-89f2-d868462ee8d3)
+![image](https://github.com/c0d3cr4f73r/c0d3cr4f73r.github.io/assets/66146701/66777c23-637e-43fe-850a-5118d9c5badd)
 
-![image](https://github.com/c0d3cr4f73r/c0d3cr4f73r.github.io/assets/66146701/39e1ead3-99a7-4407-9864-7b7cd0760252)
 
 After waiting for a minute, we can see that we have received the admin user's cookie. Now, we can add this cookie value to our browser using the inspect element feature or cookie editor add-on.
 
