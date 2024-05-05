@@ -59,6 +59,24 @@ mv jdk1.8.0_181 jdk1.8.0_20
 
 ![image](https://github.com/c0d3cr4f73r/c0d3cr4f73r.github.io/assets/66146701/ea8c6034-046d-4403-be85-10b8293e35c4)
 
+To connect to the server, I needed to download the Minecraft client on my Kali system. After conducting some research, I downloaded TLauncher. https://tlauncher.org/en/download_1/minecraft-1-16-5_12582.html (I don't recommend using this, but I proceeded anyway since I'm installing it on a VM.) 
+And I used Minecraft 1.16.5 Java Edition as I knew it's vulnerable to log4j.
+
+one download the TLauncher.zip file, unzip it and open it by runing below command:
+
+
+```
+sudo java -jar TLauncher.jar
+```
+
+![image](https://github.com/c0d3cr4f73r/c0d3cr4f73r.github.io/assets/66146701/468caa45-5db4-42da-88ae-68c589cff9ef)
+
+
+![image](https://github.com/c0d3cr4f73r/c0d3cr4f73r.github.io/assets/66146701/a5013fe2-04a9-4294-a7e9-4e607b6e33a7)
+
+after that select the correct release version and the minecraft account Click on `Enter the game`
+
+
 
 
 
