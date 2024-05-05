@@ -1,4 +1,4 @@
-![image](https://github.com/c0d3cr4f73r/c0d3cr4f73r.github.io/assets/66146701/59cf06cc-a785-476b-9c67-b8906103cdde)---
+---
 layout: post
 section-type: post
 has-comments: true
