@@ -2,7 +2,7 @@
 layout: post
 section-type: post
 has-comments: true
-title: Hack The Box - Devvortex
+title: Hack The Box - Headless
 category: tech
 tags: ["tutorial"]
 ---
