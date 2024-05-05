@@ -67,6 +67,8 @@ At this stage, we need to test the XSS payload across all parameters present in 
 
 ![image](https://github.com/c0d3cr4f73r/c0d3cr4f73r.github.io/assets/66146701/66777c23-637e-43fe-850a-5118d9c5badd)
 
+![image](https://github.com/c0d3cr4f73r/c0d3cr4f73r.github.io/assets/66146701/0495bd70-013b-4a9e-b273-fdeb1e6a3dd8)
+
 
 After waiting for a minute, we can see that we have received the admin user's cookie. Now, we can add this cookie value to our browser using the inspect element feature or cookie editor add-on.
 
