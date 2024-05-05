@@ -34,7 +34,7 @@ Key findings:
 The IP address and domain were added to `/etc/hosts`:
 
 ```
-echo "10.10.14.242 devvortex.htb" | sudo tee -a /etc/hosts
+echo "10.10.11.242 devvortex.htb" | sudo tee -a /etc/hosts
 ```
 
 ![image](https://github.com/c0d3cr4f73r/c0d3cr4f73r.github.io/assets/66146701/55866778-4e0b-4bb0-bcd5-066072be6006)
