@@ -17,7 +17,7 @@ sudo nmap -Pn -sT -sU -sC -sV 10.10.11.242
 
 ![image](https://github.com/c0d3cr4f73r/c0d3cr4f73r.github.io/assets/66146701/14b8cd55-fcce-42df-bdf6-9d19d99017d7)
 
-We add headless to /etc/hosts with the corresponding ip address given. Then navigate to `http://headless.htb:5000`
+I add headless to /etc/hosts with the corresponding ip address given. Then navigate to `http://headless.htb:5000`
 
 
 ```
