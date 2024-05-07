@@ -11,6 +11,10 @@ tags: ["tutorial"]
 
 #### Nmap
 
+```
+sudo nmap -Pn -A 10.10.11.12
+```
+
 ![image](https://github.com/c0d3cr4f73r/c0d3cr4f73r.github.io/assets/66146701/77342afa-8fe8-4c2c-9e4d-d5107846e910)
 
 ```
