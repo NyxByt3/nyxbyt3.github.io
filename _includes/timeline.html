@@ -24,12 +24,14 @@
         </li>
         {% endfor %}
 
-        <!-- Add the default image at the end of the timeline -->
+        <!-- Add the default image only if it's not included as an event -->
+        {% unless site.events | where: 'image', '/img/timeline/default.png' | size > 0 %}
         <li class="timeline-inverted">
           <div class="timeline-image">
             <img class="img-circle img-responsive" src="{{site.repository_name}}{{ site.timeline-img }}" alt="" />
           </div>
         </li>
+        {% endunless %}
       </ul>
     </div>
   </div>
