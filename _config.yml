@@ -94,15 +94,26 @@ syntax-highlight: True
 # Timeline #
 ############
 events:
-  - image: "/img/timeline/spidertocat.png"
-    date: "September 2016 - Present"
-    description: "Began cybersecurity journey, focusing on red teaming and malware analysis."
-  - image: "/img/timeline/baracktocat.jpg"
-    date: "January 2008 - Present"
-    description: "Embarked on coding journey, exploring various programming languages and technologies."
+  - image: "/img/timeline/spidertocat.png"  # Image for Present
+    date: "Present"
+    description: |
+      - Currently serving as a Senior Red Team Operator for the Dubai Government, assessing and fortifying cybersecurity defenses.
+      - Actively engaged in sharing knowledge and expertise with the cybersecurity community through blog posts, workshops, and speaking engagements.
+  - image: "/img/timeline/baracktocat.jpg"  # Image for 2016 to Present
+    date: "2016 to Present"
+    description: |
+      - Started professional career as a Red Team Operator at the Sri Lankan Defence Ministry.
+      - Continued to enrich experience in offensive security operations at AIX Investment Group in Burj Khalifa, Dubai.
+  - image: "/img/timeline/default.png"  # Image for Childhood to University Years
+    date: "Childhood to University Years (Year Range)"
+    description: |
+      - Explored coding and cybersecurity through CTF games and reverse engineering challenges.
+      - Pursued a BSc in Computer Science and participated in local and online CTF competitions.
+
 
 # First image of the Timeline
 timeline-img: "/img/timeline/default.png"
+
 ###########
 # Contact #
 ###########
