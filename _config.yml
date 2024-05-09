@@ -104,7 +104,7 @@ events:
     description: |
       - Started professional career as a Red Team Operator at the Sri Lankan Defence Ministry.
       - Continued to enrich experience in offensive security operations at AIX Investment Group in Burj Khalifa, Dubai.
-  - image: "/img/timeline/default.png"  # Image for Childhood to University Years
+timeline-img: "/img/timeline/default.png"  # Image for Childhood to University Years
     date: "Childhood to University Years (Year Range)"
     description: |
       - Explored coding and cybersecurity through CTF games and reverse engineering challenges.
