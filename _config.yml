@@ -2,7 +2,7 @@
 
 # NB! Set your site's url, otherwise stuff will break :)
 
-url: "https://c0d3cr4f73r.github.io"
+url: "https://Sp3c73rSh4d0w.github.io"
 # If you're hosting your site at a Project repository on GitHub pages
 # (https://yourusername.github.io/repository-name)
 # and NOT your user repository (https://yourusername.github.io)
@@ -16,10 +16,10 @@ url: "https://c0d3cr4f73r.github.io"
 # HTML Head #
 #############
 lang: "en"
-author: "c0d3cr4f73r"
-title: "{ c0d3cr4f73r }"
-description: "Blog and website of c0d3cr4f73r, blogging mainly for tech. Opinions expressed are mine."
-keywords: "c0d3cr4f73r, personal, redteam, CTF"
+author: "Sp3c73rSh4d0w"
+title: "{ Sp3c73rSh4d0w }"
+description: "Blog and website of Sp3c73rSh4d0w, blogging mainly for tech. Opinions expressed are mine."
+keywords: "Sp3c73rSh4d0w, personal, redteam, CTF"
 favicon: "/img/favicon.ico"
 ################
 # Header layout #
@@ -114,7 +114,7 @@ events:
 ###########
 # Contact #
 ###########
-email: "c0d3cr4f73r@gmail.com"
+email: "Sp3c73rSh4d0w@gmail.com"
 # Set a url pointing to your publish PGP Public Key here, and it will appear in the Contact section
 pgp: False
 ################
@@ -126,8 +126,8 @@ pgp: False
 
 # if the author_blurb is not set, then this feature is skipped
 author_blurb:
-  "c0d3cr4f73r is a cybersecurity enthusiast with a passion for red teaming and malware analysis. 
-  Based in Dubai, c0d3cr4f73r has extensive experience in offensive security operations. 
+  "Sp3c73rSh4d0w is a cybersecurity enthusiast with a passion for red teaming and malware analysis. 
+  Based in Dubai, Sp3c73rSh4d0w has extensive experience in offensive security operations. 
   In their free time, they enjoy diving into the latest cybersecurity challenges."
 author_blurb_image: "/img/author.png"
 
@@ -136,13 +136,13 @@ author_blurb_image: "/img/author.png"
 ##################
 social:
   - icon: "github"
-    url: "https://github.com/c0d3cr4f73r"
+    url: "https://github.com/Sp3c73rSh4d0w"
   - icon: "linkedin-in"
     url: "https://www.linkedin.com"
   - icon: "x-twitter"
     url: "https://twitter.com/"
   - icon: "rss"
-    url: "https://github.com/c0d3cr4f73r/c0d3cr4f73r.github.io/feed.xml"
+    url: "https://github.com/Sp3c73rSh4d0w/Sp3c73rSh4d0w.github.io/feed.xml"
 ############
 # 404 page #
 ############
