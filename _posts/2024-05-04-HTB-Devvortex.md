@@ -111,7 +111,7 @@ ruby exploit.rb http://dev.devvortex.htb
 
 ![image](https://github.com/c0d3cr4f73r/c0d3cr4f73r.github.io/assets/66146701/e9145417-6342-4506-a407-efb05a9171b3)
 
-https://github.com/c0d3cr4f73r/CVE-2023-23752.git
+https://github.com/n3rdyn3xus/CVE-2023-23752.git
 
 
 ### Exploit
