@@ -2,7 +2,7 @@
 
 # NB! Set your site's url, otherwise stuff will break :)
 
-url: "https://0xwh1pl4sh.github.io"
+url: "https://n3rdyn3xus.github.io"
 # If you're hosting your site at a Project repository on GitHub pages
 # (https://yourusername.github.io/repository-name)
 # and NOT your user repository (https://yourusername.github.io)
@@ -16,10 +16,10 @@ url: "https://0xwh1pl4sh.github.io"
 # HTML Head #
 #############
 lang: "en"
-author: "0xwh1pl4sh"
-title: "{ 0xwh1pl4sh }"
+author: "n3rdyn3xus"
+title: "{ n3rdyn3xus }"
 description: "Blog and website of 0xwh1pl4sh, blogging mainly for tech. Opinions expressed are mine."
-keywords: "0xwh1pl4sh, personal, redteam, CTF"
+keywords: "n3rdyn3xus, personal, redteam, CTF"
 favicon: "/img/favicon.ico"
 ################
 # Header layout #
@@ -114,7 +114,7 @@ events:
 ###########
 # Contact #
 ###########
-email: "0xwh1pl4sh@gmail.com"
+email: "n3rdyn3xus@gmail.com"
 # Set a url pointing to your publish PGP Public Key here, and it will appear in the Contact section
 pgp: False
 ################
@@ -126,8 +126,8 @@ pgp: False
 
 # if the author_blurb is not set, then this feature is skipped
 author_blurb:
-  "0xwh1pl4sh is a cybersecurity enthusiast with a passion for red teaming and malware analysis. 
-  Based in Dubai, 0xwh1pl4sh has extensive experience in offensive security operations. 
+  "n3rdyn3xus is a cybersecurity enthusiast with a passion for red teaming and malware analysis. 
+  Based in Dubai, n3rdyn3xus has extensive experience in offensive security operations. 
   In their free time, they enjoy diving into the latest cybersecurity challenges."
 author_blurb_image: "/img/author.png"
 
@@ -136,13 +136,13 @@ author_blurb_image: "/img/author.png"
 ##################
 social:
   - icon: "github"
-    url: "https://github.com/0xwh1pl4sh"
+    url: "https://github.com/n3rdyn3xus"
   - icon: "linkedin-in"
-    url: "https://www.linkedin.com"
+    url: "https://www.linkedin.com/n3rdyn3xus"
   - icon: "x-twitter"
-    url: "https://twitter.com/"
+    url: "https://twitter.com/n3rdyn3xus"
   - icon: "rss"
-    url: "https://github.com/0xwh1pl4sh/0xwh1pl4sh.github.io/feed.xml"
+    url: "https://github.com/n3rdyn3xus/n3rdyn3xus.github.io/feed.xml"
 ############
 # 404 page #
 ############
