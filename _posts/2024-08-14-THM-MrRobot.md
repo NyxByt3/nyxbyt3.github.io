@@ -24,7 +24,24 @@ Port scans revealed that ports 80 and 443 were open, indicating that HTTP and HT
 
 Upon inspecting the source code, nothing useful was found. In addition to searching for the source code, the examination of the `robots.txt` file, which is used by search engine crawlers to determine which files are allowed for parsing, was carried out.
 
+#### First Flag
+
 ![image](https://github.com/user-attachments/assets/654b72d0-0600-4270-b67f-8c484d9fcb98)
 
 We now have two files: one is a text file containing the first key, and the other is a dictionary file.
+
+
+#### Second Flag
+
+Let's download the dictionary file and use it to perform a directory brute-force attack.
+```
+wget 10.10.144.37/fsocity.dic
+```
+
+```
+gobuster dir -u http://10.10.144.37/ -w fsocity.dic
+```
+
+
+
 
