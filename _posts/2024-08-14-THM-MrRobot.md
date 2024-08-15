@@ -9,13 +9,11 @@ tags: ["tutorial"]
 
 ### Reconnaissance and Initial Steps
 
-##### Nmap Results
-
 ```
 sudo nmap -Pn -A 10.10.242.39
 ```
 
-###### Result:
+##### Nmap Results
 
 ![image](https://github.com/user-attachments/assets/de811a40-544a-4d62-bafd-f03e64b11c4d)
 
