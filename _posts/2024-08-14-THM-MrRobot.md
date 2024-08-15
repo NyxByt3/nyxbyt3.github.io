@@ -125,5 +125,37 @@ Now that we have access as robot, we can read the key file, revealing the second
 
 #### Privilege Escalation
 
-Upon checking the user's privileges with `sudo -l, it was identified that the user "robot" is not in the sudo group, meaning it doesn't have administrative privileges by default. This indicates that we will need to find another way to escalate privileges to gain root access.
+```
+sudo -l
+```
+Upon checking the user's privileges with `sudo -l`, it was identified that the user `robot` is not in the sudo group, meaning it doesn't have administrative privileges by default. This indicates that we will need to find another way to escalate privileges to gain root access.
+
+![image](https://github.com/user-attachments/assets/3034c35a-de33-4a8f-9082-05f15f148105)
+
+
+```
+find / -perm -u=s -type f 2>/dev/null
+```
+
+By searching for SUID binaries, we discovered that nmap has the SUID bit set. This means nmap can be run with elevated privileges, even by a non-privileged user. We can potentially exploit this to escalate our privileges to root by using nmap's interactive mode to execute shell commands.
+
+![image](https://github.com/user-attachments/assets/4b3d0431-1737-46d7-b863-c3eaa5c512bf)
+
+Privilege escalation can be achieved by running the following commands:
+
+1. Start nmap in interactive mode with:
+
+```
+nmap --interactive
+```
+
+2. Once in interactive mode, execute a shell with:
+
+```
+!sh
+```
+
+This grants root access, allowing us to further explore the system and complete the final steps of the CTF.
+
+![image](https://github.com/user-attachments/assets/31174e70-dbd5-480b-a3ec-751bc2f6c5d7)
 
