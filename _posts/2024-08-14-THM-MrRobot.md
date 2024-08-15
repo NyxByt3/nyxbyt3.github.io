@@ -61,13 +61,13 @@ echo 'ZWxsaW90OkVSMjgtMDY1Mgo=' | base64 -d
 ```
 elliot:ER28-0652
 ```
-The username and password can be used to log in via the /login path, which was identified during the directory brute forcing process.
+The username and password can be used to log in via the `/login` path, which was identified during the directory brute forcing process.
 
 ![image](https://github.com/user-attachments/assets/af2185cb-1545-4870-8c1e-4956588a5b2c)
 
 ![image](https://github.com/user-attachments/assets/ada544a9-71ac-4bd6-a2f5-dae38f08ca3d)
 
-Now that we are logged in, let's use the PHP reverse shell from Kali Linux. We can upload it via the Editor in the Appearance menu by editing the header.php file. This ensures that whenever the website loads, the header.php file gets executed, allowing us to establish a connection back to our machine.
+Now that we are logged in, let's use the PHP reverse shell from Kali Linux. We can upload it via the Editor in the Appearance menu by editing the `header.php` file. This ensures that whenever the website loads, the `header.php` file gets executed, allowing us to establish a connection back to our machine.
 
 ```
 sudo updatedb
@@ -98,7 +98,7 @@ nc -nlvp 9001
 
 ![image](https://github.com/user-attachments/assets/3f7082ae-e5c5-414c-bb09-ed8107edc378)
 
-After spawning /bin/bash using Python, I executed ls -la to list the files in the directory. It was revealed that we were logged in as the user daemon. However, the key file was only readable by the user robot. Another file, named password.raw-md5, contained an MD5 hash value.
+After spawning `/bin/bash` using Python, I executed `ls -la` to list the files in the directory. It was revealed that we were logged in as the user daemon. However, the key file was only readable by the user `robot`. Another file, named password.raw-md5, contained an MD5 hash value.
 
 ```
 python -c 'import pty;pty.spawn("/bin/bash");'
@@ -111,18 +111,18 @@ python -c 'import pty;pty.spawn("/bin/bash");'
 robot:c3fcd3d76192e4007dfb496cca67e13b
 ```
 
-Upon cracking the MD5 hash using CrackStation, the password for the robot user was discovered.
+Upon cracking the MD5 hash using CrackStation, the password for the `robot` user was discovered.
 
 ![image](https://github.com/user-attachments/assets/13599298-b649-4ad0-8fb0-6f86ddf448a8)
 
 ```
 abcdefghijklmnopqrstuvwxyz
 ```
-After switching the user and using the discovered password, we successfully logged in as robot. 
+After switching the user and using the discovered password, we successfully logged in as `robot`. 
 
 ![image](https://github.com/user-attachments/assets/6e76fe37-69e4-4099-bd29-f73b35a2186d)
 
-Now that we have access as robot, we can read the key file, revealing the second flag.
+Now that we have access as `robot`, we can read the key file, revealing the second flag.
 
 
 ### Privilege Escalation & Third Flag
