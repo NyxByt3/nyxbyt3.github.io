@@ -9,7 +9,7 @@ tags: ["tutorial"]
 
 ### Reconnaissance and Initial Steps
 
-##### Nmap Results
+#### Nmap Results
 
 ```
 sudo nmap -Pn -A 10.10.242.39
