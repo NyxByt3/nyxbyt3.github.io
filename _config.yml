@@ -2,7 +2,7 @@
 
 # NB! Set your site's url, otherwise stuff will break :)
 
-url: "https://n3rdyn3xus.github.io"
+url: "https://nyxbyt3.github.io"
 # If you're hosting your site at a Project repository on GitHub pages
 # (https://yourusername.github.io/repository-name)
 # and NOT your user repository (https://yourusername.github.io)
@@ -16,10 +16,10 @@ url: "https://n3rdyn3xus.github.io"
 # HTML Head #
 #############
 lang: "en"
-author: "n3rdyn3xus"
-title: "{ n3rdyn3xus }"
+author: "nyxbyt3"
+title: "{ nyxbyt3 }"
 description: "Blog and website of 0xwh1pl4sh, blogging mainly for tech. Opinions expressed are mine."
-keywords: "n3rdyn3xus, personal, redteam, CTF"
+keywords: "nyxbyt3, personal, redteam, CTF"
 favicon: "/img/favicon.ico"
 ################
 # Header layout #
@@ -114,7 +114,7 @@ events:
 ###########
 # Contact #
 ###########
-email: "n3rdyn3xus@gmail.com"
+email: "nyxbyt3@gmail.com"
 # Set a url pointing to your publish PGP Public Key here, and it will appear in the Contact section
 pgp: False
 ################
@@ -136,13 +136,13 @@ author_blurb_image: "/img/author.png"
 ##################
 social:
   - icon: "github"
-    url: "https://github.com/n3rdyn3xus"
+    url: "https://github.com/nyxbyt3"
   - icon: "linkedin-in"
-    url: "https://www.linkedin.com/n3rdyn3xus"
+    url: "https://www.linkedin.com/nyxbyt3"
   - icon: "x-twitter"
-    url: "https://twitter.com/n3rdyn3xus"
+    url: "https://twitter.com/nyxbyt3"
   - icon: "rss"
-    url: "https://github.com/n3rdyn3xus/n3rdyn3xus.github.io/feed.xml"
+    url: "https://github.com/nyxbyt3/nyxbyt3.github.io/feed.xml"
 ############
 # 404 page #
 ############
